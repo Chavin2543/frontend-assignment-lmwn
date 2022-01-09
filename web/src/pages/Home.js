@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import axios from "axios";
+import { axiosInstance } from "../config/axios";
 import Searchbar from "../components/SearchBar/Searchbar";
 import CardLists from "../components/CardList/CardList";
 import classes from "./Home.module.css";
@@ -8,12 +8,19 @@ import classes from "./Home.module.css";
 const Home = () => {
   const [searchResult, setSearchResult] = useState([]);
   const [searchText, setSearchText] = useState("");
+
   const keywordSearch = async (searchText) => {
-    const response = await axios.get(
-      "http://localhost:3030/trips?keyword=" + searchText
-    );
-    setSearchResult(response.data);
-    setSearchText(searchText);
+    try {
+      const response = await axiosInstance({
+        method: "GET",
+        url: `/trips?keyword=${searchText}`,
+      });
+
+      setSearchResult(response.data);
+      setSearchText(searchText);
+    } catch (err) {
+      console.log("error", err.message);
+    }
   };
 
   return (

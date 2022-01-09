@@ -1,6 +1,7 @@
 import React from "react";
-import classes from "./Searchbar.module.css";
 import { useNavigate } from "react-router-dom";
+import classes from "./Searchbar.module.css";
+
 const Searchbar = ({ searchText, onSearch, setSearchText }) => {
   const navigate = useNavigate();
   const handleInput = (e) => {

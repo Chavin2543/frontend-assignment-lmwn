@@ -7,8 +7,9 @@
   border: none;
   border-bottom: 1px solid #bdbdbd;
   width: 36.8vw;
-  height: 2.05vh;
+  height: 3.05vh;
   text-align: center;
+  font-size: 1.5vw;
   font-family: "Noto Sans Thai", sans-serif;
 }
 .searchbar:focus {
