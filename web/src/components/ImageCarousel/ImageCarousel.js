@@ -1,7 +1,6 @@
 import React from "react";
 import classes from "./ImageCarousel.module.css";
 const ImageCarousel = ({ photos }) => {
-  console.log("hello");
   return (
     <div className={classes.container}>
       {photos.map((item, index) => (
