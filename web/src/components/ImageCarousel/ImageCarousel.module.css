@@ -1,0 +1,38 @@
+.container {
+  width: 27.85vw;
+  display: flex;
+  flex-direction: row;
+}
+.img {
+  width: 33%;
+  height: 75%;
+  border-radius: 10px;
+  margin-right: 1vw;
+  min-width: 35x;
+  min-height: 35px;
+}
+@media screen and (min-width: 856px) {
+  .img {
+    width: 6.67vw;
+    height: 9.38vh;
+    border-radius: 15px;
+    margin-right: 1vw;
+    max-width: 96px;
+    max-height: 96px;
+    transition: 0.5s;
+  }
+  .img:hover {
+    width: 20.67vw;
+    height: 20.67vw;
+    border-radius: 15px;
+    margin-right: 1vw;
+    max-width: 5000px;
+    max-height: 5000px;
+    z-index: 2;
+  }
+}
+@media screen and (max-width: 319px) {
+  .img {
+    display: none;
+  }
+}

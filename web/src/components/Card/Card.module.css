@@ -1,0 +1,218 @@
+.container {
+  width: 80vw;
+  height: 29.88vh;
+  margin-top: 2vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.coverPhoto {
+  width: 50%;
+  height: 100%;
+  border-radius: 15px;
+  min-width: 150px;
+  min-height: 150px;
+  object-fit: cover;
+}
+
+.infoContainer {
+  margin-left: 1vh;
+  width: 30.3vw;
+  height: 29.88vh;
+  display: flex;
+  flex-direction: column;
+  max-width: 640px;
+}
+
+.title {
+  font-size: 3vw;
+  font-weight: bold;
+  margin-bottom: 1vh;
+  font-family: "Noto Sans Thai", sans-serif;
+  text-decoration: none !important;
+}
+
+.description {
+  font-size: 15%;
+  line-height: 16px;
+  font-family: "Noto Sans Thai", sans-serif;
+}
+
+.tagContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-top: 3;
+}
+
+.tag {
+  background: transparent;
+  border: none;
+  font-size: 10%;
+  text-decoration: underline;
+  color: #999999;
+  font-family: "Noto Sans Thai", sans-serif;
+}
+.lastTag {
+  font-size: 15%;
+  margin-right: 0.5vw;
+  color: #999999;
+  margin-top: auto;
+  font-family: "Noto Sans Thai", sans-serif;
+}
+.carousel {
+  margin-top: auto;
+}
+@media screen and (min-width: 856px) {
+  .container {
+    height: 29.88vh;
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transition: 0.3s;
+    border-radius: 40px;
+  }
+  .coverPhoto {
+    width: 13.2vw;
+    height: 29.88vh;
+    border-radius: 15px;
+    min-width: 300px;
+    object-fit: cover;
+    transition: 0.3s;
+  }
+  .infoContainer {
+    margin-left: 1vh;
+    width: 30.3vw;
+    height: 29.88vh;
+    display: flex;
+    flex-direction: column;
+    max-width: 640px;
+  }
+  .title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 1vh;
+    font-family: "Noto Sans Thai", sans-serif;
+    max-width: 27.8vw;
+    min-width: 27.8vw;
+    max-height: 72px;
+  }
+  .description {
+    font-size: 14px;
+    font-family: "Noto Sans Thai", sans-serif;
+    max-width: 27.8vw;
+  }
+  .tagContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 3;
+    max-width: 27.8vw;
+  }
+  .tag {
+    background: transparent;
+    border: none;
+    font-size: 10px;
+    color: #999999;
+    font-family: "Noto Sans Thai", sans-serif;
+    max-width: 27.8vw;
+    transition: 0.3s;
+  }
+  .tag:hover {
+    background: rgb(68, 144, 214);
+    border: none;
+    font-size: 10px;
+    text-decoration: underline;
+    border-radius: 4px;
+    color: white;
+    font-family: "Noto Sans Thai", sans-serif;
+    max-width: 27.8vw;
+  }
+  .lastTag {
+    background: transparent;
+    border: none;
+    font-size: 10px;
+    color: #999999;
+    font-family: "Noto Sans Thai", sans-serif;
+    max-width: 27.8vw;
+  }
+  .link {
+    text-decoration: underline;
+    color: #3aa3dd;
+  }
+}
+@media screen and (max-width: 320px) {
+  .container {
+    width: 80vw;
+    height: 29.88vh;
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .coverPhoto {
+    width: 50%;
+    height: 100%;
+    border-radius: 15px;
+    min-width: 150px;
+    min-height: 190px;
+    object-fit: cover;
+  }
+
+  .infoContainer {
+    margin-left: 1vh;
+    width: 43.3vw;
+    height: 29.88vh;
+    display: flex;
+    flex-direction: column;
+    max-width: 640px;
+  }
+
+  .title {
+    font-size: 9px;
+    font-weight: bold;
+    margin-bottom: 1vh;
+    font-family: "Noto Sans Thai", sans-serif;
+    max-width: 140px;
+  }
+
+  .description {
+    font-size: 7px;
+    line-height: 16px;
+    font-family: "Noto Sans Thai", sans-serif;
+    max-width: 140px;
+  }
+
+  .tagContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-top: 3;
+    max-width: 140px;
+  }
+
+  .tag {
+    background: transparent;
+    border: none;
+    font-size: 5px;
+    text-decoration: underline;
+    color: #999999;
+    font-family: "Noto Sans Thai", sans-serif;
+  }
+  .lastTag {
+    background: transparent;
+    border: none;
+    font-size: 5px;
+    color: #999999;
+    font-family: "Noto Sans Thai", sans-serif;
+  }
+  .carousel {
+    margin-top: auto;
+  }
+}
+a,
+u {
+  text-decoration: none;
+  color: black;
+}

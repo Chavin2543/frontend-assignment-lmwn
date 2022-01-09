@@ -1,0 +1,32 @@
+.container {
+  width: 36.8vw;
+  height: 2.05vh;
+}
+.searchbar {
+  border: none;
+  border-bottom: 1px solid #bdbdbd;
+  width: 36.8vw;
+  height: 2.05vh;
+  text-align: center;
+  font-family: "Noto Sans Thai", sans-serif;
+}
+.searchbar:focus {
+  border: none !important;
+}
+@media screen and (max-width: 660px) {
+  .container {
+    width: 70vw;
+    height: 2.05vh;
+  }
+  .searchbar {
+    border: none;
+    border-bottom: 1px solid #bdbdbd;
+    width: 70vw;
+    height: 2.05vh;
+    text-align: center;
+    font-family: "Noto Sans Thai", sans-serif;
+  }
+  .searchbar:focus {
+    border: none !important;
+  }
+}

@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  margin-bottom: 7vh;
+  justify-content: center;
+  width: 100vw;
+}
+@media screen and (min-width: 1024px) {
+  .container {
+    display: flex;
+    margin-bottom: 7vh;
+    justify-content: center;
+    width: 100vw;
+  }
+}
+@media screen and (max-width: 320px) {
+  .container {
+    display: flex;
+    margin-bottom: 7vh;
+    justify-content: center;
+    width: 100vw;
+    min-height: 180px;
+  }
+}
