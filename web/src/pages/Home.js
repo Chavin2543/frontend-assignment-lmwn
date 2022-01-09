@@ -32,7 +32,7 @@ const Home = () => {
       <CardLists
         setSearchText={setSearchText}
         onClick={keywordSearch}
-        result={searchResult}
+        items={searchResult}
       ></CardLists>
     </div>
   );

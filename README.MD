@@ -50,6 +50,8 @@ http://commadot.com/wtf-per-minute/
 ```
 GET /api/trips?keyword=ภูเขา
 
+GET /trips/:keyword
+
 Response Status 200:
 
 {
@@ -178,4 +180,3 @@ Response Status 200:
 - [ ] จะต้องมีการแสดงผลรูปที่ได้รับมา เพื่อดึงดูดให้ user กดเข้าไปที่ตัวทริป
 - [ ] หมวดหมู่ที่แสดง สามารถกดและกลายเป็น search keyword โดยเป็นชื่อ tag นั้น
 - [ ] User สามารถ copy link และส่งต่อไปให้เพื่อน สำหรับ keyword เดียวกัน (Optional)
-

@@ -3,6 +3,7 @@
   height: 2.05vh;
 }
 .searchbar {
+  outline: none;
   border: none;
   border-bottom: 1px solid #bdbdbd;
   width: 36.8vw;
@@ -11,7 +12,8 @@
   font-family: "Noto Sans Thai", sans-serif;
 }
 .searchbar:focus {
-  border: none !important;
+  border-bottom: #2c9cdc 1px solid !important;
+  color: #2c9cdc;
 }
 @media screen and (max-width: 660px) {
   .container {

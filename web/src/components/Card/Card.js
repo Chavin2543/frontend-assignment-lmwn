@@ -3,59 +3,63 @@ import ImageCarousel from "../ImageCarousel/ImageCarousel";
 import classes from "./Card.module.css";
 import { useNavigate } from "react-router-dom";
 
-const Card = (props) => {
-  let firstTagList = [];
+const Card = ({ item, onClick, setSearchText }) => {
   const navigate = useNavigate();
-  let extraPhoto = [];
-  let descriptionShort = "";
-  let lastTag = props.result.tags[props.result.tags.length - 1];
+
+  const managePhoto = (photoData) => {
+    let extraPhoto = [];
+    for (let i = 1; i < photoData.length; i++) {
+      extraPhoto.push(photoData[i]);
+    }
+
+    return extraPhoto;
+  };
+
+  const manageTag = (tagData) => {
+    let firstTagList = [];
+    for (let j = 0; j < tagData.length - 1; j++) {
+      firstTagList.push(tagData[j]);
+    }
+    return firstTagList;
+  };
+
+  const manageDescription = (descriptionData) => {
+    let descriptionShort = "";
+    if (item.description.length > 180) {
+      descriptionShort = descriptionData.substring(0, 180);
+    } else {
+      descriptionShort = descriptionData;
+    }
+    return descriptionShort;
+  };
 
   const handleTagInput = (item) => {
-    props.onClick(item);
-    props.setSearchText(item);
+    onClick(item);
+    setSearchText(item);
     navigate(`/trips?keyword=${item}`);
   };
 
-  for (
-    var indexPhoto = 1;
-    indexPhoto < props.result.photos.length;
-    indexPhoto++
-  ) {
-    extraPhoto.push(props.result.photos[indexPhoto]);
-  }
-
-  for (var indexTag = 0; indexTag < props.result.tags.length - 1; indexTag++) {
-    firstTagList.push(props.result.tags[indexTag]);
-  }
-
-  if (props.result.description.length > 180) {
-    descriptionShort = props.result.description.substring(0, 180);
-  } else {
-    descriptionShort = props.result.description;
-  }
-
-  console.log("firstTagList" + firstTagList);
   return (
     <div className={classes.container}>
       <img
         className={classes.coverPhoto}
         alt="cover"
-        src={props.result.photos[0]}
+        src={item.photos[0]}
       ></img>
       <div className={classes.infoContainer}>
         <div className={classes.title}>
-          <a target="_blank" rel="noopener noreferrer" href={props.result.url}>
-            {props.result.title}
+          <a target="_blank" rel="noopener noreferrer" href={item.url}>
+            {item.title}
           </a>
         </div>
         <div className={classes.description}>
-          {descriptionShort}
+          {manageDescription(item.description)}
           <span>
             <span>...</span>
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href={props.result.url}
+              href={item.url}
               className={classes.link}
             >
               อ่านต่อ
@@ -64,7 +68,7 @@ const Card = (props) => {
         </div>
         <div className={classes.tagContainer}>
           <button className={classes.lastTag}>หมวด:</button>
-          {firstTagList.map((item, tagIndex) => (
+          {manageTag(item.tags).map((item, tagIndex) => (
             <button
               className={classes.tag}
               key={tagIndex}
@@ -79,15 +83,15 @@ const Card = (props) => {
           <button
             className={classes.tag}
             onClick={() => {
-              handleTagInput(lastTag);
+              handleTagInput(item.tags);
             }}
           >
             {" "}
-            {lastTag}
+            {item.tags[item.tags.length - 1]}
           </button>
         </div>
         <div className={classes.carousel}>
-          <ImageCarousel photos={extraPhoto} />
+          <ImageCarousel photos={managePhoto(item.photos)} />
         </div>
       </div>
     </div>
